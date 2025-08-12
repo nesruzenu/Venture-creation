@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduVenture | Revolutionizing Education</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4caf50;
+            --warning: #ff9800;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f4f8;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+        }
+        
+        .nav-links a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(67, 97, 238, 0.8), rgba(63, 55, 201, 0.9)), url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding-top: 70px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .tagline {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #3ab0d6;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--secondary);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .content-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .content-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        /* Journey Section */
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .journey-card {
+            background: linear-gradient(to bottom right, white, #f5f8ff);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .journey-card h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .journey-card ul {
+            padding-left: 20px;
+        }
+        
+        .journey-card li {
+            margin-bottom: 10px;
+        }
+        
+        /* Solution Section */
+        .solution-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .solution-card {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .solution-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Prototype Section */
+        .prototype-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .prototype-card {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .prototype-img {
+            width: 100%;
+            height: 200px;
+            background-color: #e0e7ff;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 4rem;
+        }
+        
+        .milestone-list {
+            list-style: none;
+            margin-top: 2rem;
+            text-align: left;
+        }
+        
+        .milestone-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .milestone-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        /* Reflection Section */
+        .reflection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .reflection-card {
+            background: linear-gradient(to bottom right, white, #f5f8ff);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .reflection-card h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.3rem;
+            }
+            
+            section {
+                padding: 4rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>EduVenture</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#journey">Journey</a></li>
+                    <li><a href="#solution">Solution</a></li>
+                    <li><a href="#prototype">Prototype</a></li>
+                    <li><a href="#reflection">Reflection</a></li>
+                    <li><a href="#contact" class="btn">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transforming Education Through Innovation</h1>
+                <p class="tagline">Personalized learning experiences for every student</p>
+                <p>EduVenture is revolutionizing the educational landscape by creating adaptive learning solutions that empower students and educators alike. Our platform bridges the gap between traditional teaching methods and the digital future of education.</p>
+                <a href="#solution" class="btn">Discover Our Solution</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entrepreneurial Journey -->
+    <section id="journey">
+        <div class="container">
+            <h2 class="section-title">Our Entrepreneurial Journey</h2>
+            <div class="journey-grid">
+                <div class="journey-card">
+                    <h3>The Problem</h3>
+                    <p>Traditional education systems struggle to meet the diverse needs of today's students. Many learners are left behind due to:</p>
+                    <ul>
+                        <li>One-size-fits-all teaching approaches</li>
+                        <li>Lack of personalized learning paths</li>
+                        <li>Insufficient teacher resources</li>
+                        <li>Limited accessibility for students with special needs</li>
+                        <li>Engagement challenges in digital environments</li>
+                    </ul>
+                </div>
+                
+                <div class="journey-card">
+                    <h3>Audience Pain Points</h3>
+                    <p>Through extensive research, we identified key frustrations:</p>
+                    <ul>
+                        <li><strong>Students:</strong> Boredom, disengagement, lack of motivation</li>
+                        <li><strong>Teachers:</strong> Overwhelming workloads, limited time for individual attention</li>
+                        <li><strong>Parents:</strong> Difficulty tracking progress, concerns about learning gaps</li>
+                        <li><strong>Schools:</strong> Budget constraints, outdated technology</li>
+                    </ul>
+                </div>
+                
+                <div class="journey-card">
+                    <h3>Research Validation</h3>
+                    <p>Our findings are backed by comprehensive research:</p>
+                    <ul>
+                        <li>Surveyed 500+ educators and 1,200 students</li>
+                        <li>Conducted 50+ school visits and observations</li>
+                        <li>Analyzed academic performance data across districts</li>
+                        <li>Partnered with educational psychologists</li>
+                        <li>Pilot program showed 45% improvement in engagement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section id="solution" style="background-color: #f8fafc;">
+        <div class="container">
+            <h2 class="section-title">Our Innovative Solution</h2>
+            <div class="content-card">
+                <p>EduVenture is an adaptive learning platform that personalizes educational content based on each student's learning style, pace, and interests. Using AI technology, we create customized learning paths that evolve with the student.</p>
+            </div>
+            
+            <div class="solution-container">
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>AI-driven personalization engine</li>
+                        <li>Real-time progress tracking</li>
+                        <li>Gamified learning experiences</li>
+                        <li>Collaborative projects</li>
+                        <li>Accessibility modules</li>
+                        <li>Teacher dashboard with insights</li>
+                    </ul>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Beneficiaries</h3>
+                    <ul>
+                        <li>K-12 Students</li>
+                        <li>Special Education Programs</li>
+                        <li>Teachers & Educators</li>
+                        <li>Homeschooling Families</li>
+                        <li>After-School Programs</li>
+                        <li>Educational Institutions</li>
+                    </ul>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Unique Selling Points</h3>
+                    <ul>
+                        <li>Proprietary adaptive algorithm</li>
+                        <li>Seamless LMS integration</li>
+                        <li>Cost-effective implementation</li>
+                        <li>Proven engagement results</li>
+                        <li>Continuous content updates</li>
+                        <li>Comprehensive support system</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prototype -->
+    <section id="prototype">
+        <div class="container">
+            <h2 class="section-title">Prototype & Development</h2>
+            
+            <div class="prototype-container">
+                <div class="prototype-card">
+                    <div class="prototype-img">
+                        <i class="fas fa-chalkboard"></i>
+                    </div>
+                    <h3>Initial Wireframes</h3>
+                    <p>Our design process began with comprehensive wireframes mapping out the user experience for students, teachers, and administrators.</p>
+                </div>
+                
+                <div class="prototype-card">
+                    <div class="prototype-img">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Interactive Mockups</h3>
+                    <p>High-fidelity prototypes were created to test user flows and gather feedback from our focus groups.</p>
+                </div>
+                
+                <div class="prototype-card">
+                    <div class="prototype-img">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Technical Architecture</h3>
+                    <p>Scalable infrastructure using modern technologies to ensure reliability and performance at any scale.</p>
+                </div>
+            </div>
+            
+            <div class="content-card">
+                <h3>Development Milestones</h3>
+                <ul class="milestone-list">
+                    <li><strong>Q1 2023:</strong> Concept validation and market research</li>
+                    <li><strong>Q2 2023:</strong> Initial prototype development</li>
+                    <li><strong>Q3 2023:</strong> Pilot program in 3 schools</li>
+                    <li><strong>Q4 2023:</strong> Feedback implementation and refinement</li>
+                    <li><strong>Q1 2024:</strong> Beta launch with 20 educational institutions</li>
+                    <li><strong>Q2 2024:</strong> Full platform release with premium features</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reflection & Future Plans -->
+    <section id="reflection" style="background-color: #f0f7ff;">
+        <div class="container">
+            <h2 class="section-title">Reflection & Future Vision</h2>
+            
+            <div class="reflection-grid">
+                <div class="reflection-card">
+                    <h3>Challenges Overcome</h3>
+                    <p>Our journey hasn't been without obstacles:</p>
+                    <ul>
+                        <li><strong>Technical Hurdles:</strong> Creating a truly adaptive algorithm required multiple iterations</li>
+                        <li><strong>Adoption Resistance:</strong> Educators were initially skeptical about new technology</li>
+                        <li><strong>Resource Constraints:</strong> Bootstrapping forced us to be creative with development</li>
+                        <li><strong>Market Timing:</strong> Launched during challenging economic conditions for schools</li>
+                    </ul>
+                </div>
+                
+                <div class="reflection-card">
+                    <h3>Key Lessons Learned</h3>
+                    <p>Valuable insights from our entrepreneurial journey:</p>
+                    <ul>
+                        <li>User feedback is invaluable - build with, not for your users</li>
+                        <li>Minimum Viable Product (MVP) approach saves time and resources</li>
+                        <li>Partnerships accelerate growth more than competition</li>
+                        <li>Adaptability is crucial - pivot when necessary</li>
+                        <li>Passion sustains through difficult periods</li>
+                    </ul>
+                </div>
+                
+                <div class="reflection-card">
+                    <h3>Future Goals & Vision</h3>
+                    <p>Our roadmap for the next 3 years:</p>
+              
