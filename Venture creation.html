@@ -566,4 +566,86 @@
                 <div class="reflection-card">
                     <h3>Future Goals & Vision</h3>
                     <p>Our roadmap for the next 3 years:</p>
+                       <ul>
+                        <li><strong>2024:</strong> Expand to 100+ schools nationwide</li>
+                        <li><strong>2025:</strong> International expansion with localization</li>
+                        <li><strong>2026:</strong> Develop VR/AR learning modules</li>
+                        <li>Establish research partnerships with universities</li>
+                        <li>Create scholarship program for underserved communities</li>
+                        <li>Develop AI tutor assistant feature</li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EduVenture</h3>
+                    <p>Transforming education through innovative technology and personalized learning experiences.</p>
+                    <p>123 Education Blvd, Learning City, LC 54321</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#journey">Our Journey</a></li>
+                        <li><a href="#solution">Our Solution</a></li>
+                        <li><a href="#prototype">Prototype</a></li>
+                        <li><a href="#reflection">Future Plans</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> info@eduveture.com</li>
+                        <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                        <li><i class="fas fa-comment"></i> Live Chat Support</li>
+                    </ul>
+                    <div style="margin-top: 20px;">
+                        <a href="#" style="color: white; margin-right: 15px;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" style="color: white;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 EduVenture. All rights reserved. Designed with ❤️ for the future of education.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Header background change on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'linear-gradient(135deg, var(--primary), var(--secondary))';
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, var(--primary), var(--secondary))';
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+                                                            </html>
               
